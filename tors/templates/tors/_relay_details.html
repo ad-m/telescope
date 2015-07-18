@@ -1,0 +1,123 @@
+{% load i18n %}
+<h3>{{relay.nickname|default:relay.fingerprint}}</h3>
+<table class="table table-stripped">
+    <tr>
+        <th>K</th><th>V</th>
+    </tr>
+    <tr>
+        <td>{% trans "exit_policy_summary" %}</td>
+        <td>{{ relay.exit_policy_summary }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "family" %}</td>
+        <td>{{ relay.family }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "last_restarted" %}</td>
+        <td>{{ relay.last_restarted }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "guard_probability" %}</td>
+        <td>{{ relay.guard_probability }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "bandwidth" %}</td>
+        <td>{{ relay.bandwidth }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "exit_policy" %}</td>
+        <td>{{ relay.exit_policy }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "first_seen" %}</td>
+        <td>{{ relay.first_seen }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "dir_address" %}</td>
+        <td>{{ relay.dir_address }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "middle_probability" %}</td>
+        <td>{{ relay.middle_probability }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "nickname" %}</td>
+        <td>{{ relay.nickname }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "exit_probability" %}</td>
+        <td>{{ relay.exit_probability }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "platform" %}</td>
+        <td>{{ relay.platform }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "contact" %}</td>
+        <td>{{ relay.contact }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "exit_addresses" %}</td>
+        <td>{{ relay.exit_addresses }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "as_number" %}</td>
+        <td>{{ relay.as_number }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "consensus_weight_fraction" %}</td>
+        <td>{{ relay.consensus_weight_fraction }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "or_addresses" %}</td>
+        <td>{{ relay.or_addresses }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "running" %}</td>
+        <td>{{ relay.running }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "consensus_weight" %}</td>
+        <td>{{ relay.consensus_weight }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "fingerprint" %}</td>
+        <td>{{ relay.fingerprint }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "hibernating" %}</td>
+        <td>{{ relay.hibernating }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "geo" %}</td>
+        <td>{{ relay.geo }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "exit_policy_v6_summary" %}</td>
+        <td>{{ relay.exit_policy_v6_summary }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "flags" %}</td>
+        <td>{{ relay.flags }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "host_name" %}</td>
+        <td>{{ relay.host_name }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "recommended_version" %}</td>
+        <td>{{ relay.recommended_version }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "as_name" %}</td>
+        <td>{{ relay.as_name }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "last_changed_address_or_port" %}</td>
+        <td>{{ relay.last_changed_address_or_port }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "last_seen" %}</td>
+        <td>{{ relay.last_seen }}</td>
+    </tr>
+</table>

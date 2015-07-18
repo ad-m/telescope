@@ -1,0 +1,23 @@
+{% extends 'tors/base.html' %}
+{% load i18n %}
+{% block content %}
+{% block headline %}{{query}}{% endblock %}
+{% include 'tors/_summary_list.html' with query=query %}
+
+<nav> {# TODO: Center #}
+  <ul class="pagination">
+  {% if prev_page %}
+    <li>
+      <a href="{% url 'tors:summary' page=prev_page %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% endif %}
+    <li>
+      <a href="{% url 'tors:summary' page=next_page %}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}

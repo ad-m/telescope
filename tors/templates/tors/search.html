@@ -1,0 +1,34 @@
+{% extends 'tors/base.html' %}
+{% load i18n crispy_forms_tags %}
+{% block breadcrumb_row %}
+{% if keyword %}
+<li><a href="{% url 'tors:search'%}">{% trans 'Search' %}</a></li>
+<li class="active">{{keyword}}</li>
+{% else %}
+<li class="active">{% trans 'Search '%}</li>
+
+{% endif %}
+
+{% endblock %}
+{% block content %}
+<h2>{% blocktrans %}Search for {{keyword}}{% endblocktrans %}</h2>
+{% crispy form %}
+{% include 'tors/_summary_list.html' with query=query %}
+
+<nav> {# TODO: Center #}
+  <ul class="pagination">
+  {% if prev_page %}
+    <li>
+      <a href="{% url 'tors:search' page=prev_page %}?{{request.GET.urlencode %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% endif %}
+    <li>
+      <a href="{% url 'tors:search' page=next_page %}?{{request.GET.urlencode }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}

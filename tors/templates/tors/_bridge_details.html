@@ -1,0 +1,51 @@
+{% load i18n %}
+<h4>{{ bridge.nickname|default:bridge.hashed_fingerprint }}</h4>
+<table class="table table-striped">
+    <tr>
+        <th>K</th><th>V</th>
+    </tr>
+    <tr>
+       <td>{% trans "last_restarted" %}</td>
+       <td>{{ bridge.last_restarted }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "transports" %}</td>
+       <td>{{ bridge.transports }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "or_addresses" %}</td>
+       <td>{{ bridge.or_addresses }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "platform" %}</td>
+       <td>{{ bridge.platform }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "running" %}</td>
+       <td>{{ bridge.running }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "hashed_fingerprint" %}</td>
+       <td>{{ bridge.hashed_fingerprint }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "advertised_bandwidth" %}</td>
+       <td>{{ bridge.advertised_bandwidth }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "flags" %}</td>
+       <td>{{ bridge.flags }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "first_seen" %}</td>
+       <td>{{ bridge.first_seen }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "nickname" %}</td>
+       <td>{{ bridge.nickname }}</td>
+   </tr>
+   <tr>
+       <td>{% trans "last_seen" %}</td>
+       <td>{{ bridge.last_seen }}</td>
+   </tr>
+</table>

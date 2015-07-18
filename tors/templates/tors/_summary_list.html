@@ -1,0 +1,40 @@
+{% load i18n %}
+{% if query.bridges %}
+    <h3>{% trans 'Bridges' %}</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>{% trans 'Hashed fingerprint' %}</th>
+            <th>{% trans 'Nickname' %}</th>
+            <th>{% trans 'Running' %}</th>
+        </tr>
+
+        {% for bridge in query.bridges %}
+            <tr>
+                <td><a href="{% url 'tors:details' fingerprint=bridge.hash %}">{{bridge.hash}}</a></td>
+                <td>{{bridge.nickname}}</td>
+                <td>{{bridge.running}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% if query.relays %}
+    <h3>{% trans 'Relays' %}</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>{% trans 'IP'%}</th>
+            <th>{% trans 'Fingerprint' %}</th>
+            <th>{% trans 'Nickname' %}</th>
+            <th>{% trans 'Running' %}</th>
+        </tr>
+
+        {% for relay in query.relays %}
+            <tr>
+                <td>{% for address in relay.addresses %}<a href="{% url 'tors:summary' address=address %}">{{address}}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                <td><a href="{% url 'tors:details' fingerprint=relay.fingerprint %}">{{relay.fingerprint}}</a></td>
+                <td>{{relay.nickname}}</td>
+                <td>{{relay.running}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}

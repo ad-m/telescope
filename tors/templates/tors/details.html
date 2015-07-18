@@ -1,0 +1,19 @@
+{% extends 'tors/base.html' %}
+{% load i18n %}
+{% block content %}
+{{query}}
+<div class="row">
+    <div class="col-md-6">
+        <h2>{% trans 'Bridges' %}</h2>
+        {% for bridge in query.bridges %}
+        {% include 'tors/_bridge_details.html' with bridge=bridge %}
+        {% endfor %}
+    </div>
+    <div class="col-md-6">
+        <h2>{% trans 'Relays' %}</h2>
+        {% for relay in query.relays %}
+        {% include 'tors/_relay_details.html' with relay=relay %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

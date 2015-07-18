@@ -1,0 +1,9 @@
+{% extends 'tors/base.html' %}
+{% load i18n %}
+
+{% block content %}
+{% for keyword, result in queries.items %}
+    <h2>{{keyword}}</h2>
+    {% include 'tors/_summary_list.html' with query=result %}
+{% endfor %} 
+{% endblock %}
