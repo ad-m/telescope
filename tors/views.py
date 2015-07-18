@@ -1,5 +1,5 @@
 from onion_py.manager import Manager
-from onion_py.caching import OnionSimpleCache
+from django_onion_cache import OnionDjangoCache
 from django.views.generic import TemplateView, FormView
 from .forms import SearchForm
 
@@ -21,7 +21,7 @@ class PaginationMixin(object):
 
 
 class QueryMixin(object):
-    manager = Manager(OnionSimpleCache())
+    manager = Manager(OnionDjangoCache())
     query = None
 
     def get_query(self):
