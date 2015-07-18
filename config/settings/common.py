@@ -226,4 +226,4 @@ LOGGING = {
 }
 
 # Your common stuff: Below this line define 3rd party library settings
-TOR_BOOKMARKS = env('DJANGO_TOR_BOOKMARKS').split(',')
+TOR_BOOKMARKS = env('DJANGO_TOR_BOOKMARKS', default='flux').split(',')

@@ -111,6 +111,7 @@ class DetailsView(QueryMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(DetailsView, self).get_context_data(**kwargs)
+        context['fingerprint'] = self.kwargs['fingerprint']
         context['query'] = self.get_queryset()
         return context
 

@@ -1,6 +1,10 @@
 {% extends 'tors/base.html' %}
 {% load i18n %}
 
+{% block breadcrumb_row %}
+<li class="active">{% trans 'Bookmarks ' %}</li>
+{% endblock %}
+
 {% block content %}
 {% for keyword, result in queries.items %}
     <h2>{{keyword}}</h2>

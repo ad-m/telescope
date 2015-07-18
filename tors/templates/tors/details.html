@@ -1,5 +1,9 @@
 {% extends 'tors/base.html' %}
 {% load i18n %}
+{% block breadcrumb_row %}
+<li class="active">{{fingerprint}}</li>
+{% endblock %}
+
 {% block content %}
 {{query}}
 <div class="row">

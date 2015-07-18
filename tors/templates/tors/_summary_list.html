@@ -1,4 +1,7 @@
-{% load i18n %}
+{% load i18n tors_tags %}
+{% if not query.bridges and not query.relays %}
+{% trans 'Unfortunately, nothing found here!' %}
+{% endif %}
 {% if query.bridges %}
     <h3>{% trans 'Bridges' %}</h3>
     <table class="table table-striped">
@@ -30,7 +33,16 @@
 
         {% for relay in query.relays %}
             <tr>
-                <td>{% for address in relay.addresses %}<a href="{% url 'tors:summary' address=address %}">{{address}}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                <td>
+                {% for address in relay.addresses %}
+                {% if address|is_ipv4 %}
+                    <a href="{% url 'tors:summary' address=address %}">{{address}}</a>
+                {% else %}
+                    {{address}}
+                {% endif %}
+                {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+                </td>
                 <td><a href="{% url 'tors:details' fingerprint=relay.fingerprint %}">{{relay.fingerprint}}</a></td>
                 <td>{{relay.nickname}}</td>
                 <td>{{relay.running}}</td>
