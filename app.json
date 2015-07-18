@@ -1,0 +1,22 @@
+{
+  "name":"telescope",
+  "description":"A simple, web-app to show status of selected tor nodes.",
+  "scripts":{},
+  "env":{
+    "DJANGO_MAILGUN_API_KEY":{
+      "required":true
+    },
+    "DJANGO_MAILGUN_SERVER_NAME":{
+      "required":true
+    },
+    "DJANGO_SECRET_KEY":{
+      "generator":"secret"
+    },
+    "DJANGO_SETTINGS_MODULE":"config.settings.production",
+    "DJANGO_TOR_BOOKMARKS":"flux"
+  },
+  "addons":[
+    "mailgun",
+    "memcachier"
+  ]
+}
