@@ -10,7 +10,6 @@ Production Configurations
 from __future__ import absolute_import, unicode_literals
 
 
-from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
 
 from .common import *  # noqa
@@ -25,7 +24,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # properly on Heroku.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
+ALLOWED_HOSTS = ['*']
 # Static Assests
 # ------------------------
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
