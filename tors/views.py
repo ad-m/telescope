@@ -1,5 +1,5 @@
 from onion_py.manager import Manager
-from django_onion_cache import OnionDjangoCache
+from onion_py.caching import OnionDjangoCache
 from django.views.generic import TemplateView, FormView
 from .forms import SearchForm
 
